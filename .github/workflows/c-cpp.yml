@@ -32,6 +32,10 @@ jobs:
           echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
           sudo apt update && sudo apt install bazel -y
 
+      - name: Install virtualenv
+        run: |
+          sudo apt-get install python3-pip -y
+          sudo pip3 install virtualenv 
 
       # Runs a set of commands using the runners shell
       - name: Run tests
